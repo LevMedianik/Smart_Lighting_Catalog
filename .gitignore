@@ -1,0 +1,43 @@
+# ==============================================================
+# .gitignore — Smart AI Lighting Catalog
+# ==============================================================
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# Cache / temp
+*.DS_Store
+*.tmp
+*.bak
+.cache/
+.ipynb_checkpoints/
+
+# CatBoost / MLflow
+catboost_info/
+mlruns/
+
+# Environment
+.env
+.env.*
+
+# PyCharm / VSCode
+.idea/
+.vscode/
+
+# Docker
+*.pid
+*.tar

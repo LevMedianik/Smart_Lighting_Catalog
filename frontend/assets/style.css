@@ -1,0 +1,87 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* Анимация появления */
+#hero h2, #hero p, #hero a {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.9s ease-out forwards;
+}
+
+#hero h2 { animation-delay: 0.2s; }
+#hero p { animation-delay: 0.4s; }
+#hero a { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* чат */
+.chat-msg { display: flex; }
+.chat-msg.bot { justify-content: flex-start; }
+.chat-msg.user { justify-content: flex-end; }
+.chat-msg .bubble{
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  line-height: 1.4;
+  box-shadow: 0 6px 16px rgba(0,0,0,.25);
+}
+.chat-msg.bot .bubble{
+  background: linear-gradient(180deg,#23282b 0%, #1d2225 100%);
+  border: 1px solid rgba(255,255,255,.06);
+  color: #e7ecef;
+}
+.chat-msg.user .bubble{
+  background: #ffc54d;
+  color: #111;
+  font-weight: 600;
+}
+.bubble .tip{ color:#ffd27c }
+
+#advisor {
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* Активная кнопка категории или подкатегории */
+.active-btn {
+  background-color: rgb(251 191 36); /* amber-400 */
+  color: #1f1f1f;
+  box-shadow: 0 0 18px rgba(251, 191, 36, 0.6);
+  transform: scale(1.05);
+}
+
+/* Активная категория (большие карточки) */
+.category-btn.active-btn {
+  background-color: rgba(251, 191, 36, 0.15);
+  box-shadow: 0 0 25px rgba(251, 191, 36, 0.6);
+  transform: scale(1.03);
+}
+
+/* Настройка оформления карточек */
+.category-btn.active-btn h3,
+.category-btn.active-btn p {
+  color: #fff !important;
+}
+
+.active-btn:hover {
+  background-color: rgb(251 191 36) !important; /* amber-400 */
+  color: #1f1f1f !important;
+  box-shadow: 0 0 18px rgba(251, 191, 36, 0.6);
+}
+
+.category-btn.active-btn:hover {
+  background-color: rgba(251, 191, 36, 0.15) !important;
+  box-shadow: 0 0 25px rgba(251, 191, 36, 0.6);
+  color: #fff !important;
+}

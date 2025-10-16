@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Умный каталог световых решений</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+
+  <!-- Навигация -->
+  <header class="w-full bg-gray-800/70 backdrop-blur-md fixed top-0 left-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
+      <h1 class="text-2xl font-bold">💡 Умный каталог световых решений</h1>
+      <nav class="flex gap-10 text-lg">
+        <a href="#" class="hover:text-amber-400 transition">Главная</a>
+        <a href="#categories" class="hover:text-amber-400 transition">Категории</a>
+        <a href="#advisor" class="hover:text-amber-400 transition">AI-советник</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative h-screen flex items-center justify-center text-center" id="hero">
+    <!-- Фон -->
+    <div class="absolute inset-0">
+      <img src="./assets/bg.png" alt="background" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+
+    <!-- Контент -->
+    <div class="relative z-10 max-w-3xl px-4">
+      <h2 class="text-5xl font-extrabold mb-6 leading-tight">
+        Освещайте умно. <span class="text-amber-400">Живите красиво.</span>
+      </h2>
+      <p class="text-gray-300 text-lg mb-8">
+        Каталог предлагает более 200 световых решения, а наш AI-советник подберёт решения, 
+        идеально сочетающие эффективность, стиль и комфорт.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-6">
+        <a href="#advisor" class="px-8 py-3 rounded-xl font-semibold
+           bg-amber-400 text-gray-900 hover:bg-amber-300
+           shadow-[0_0_18px_rgba(251,191,36,0.5)] transition">
+          Подобрать освещение с ИИ
+        </a>
+        <a href="#categories" class="px-8 py-3 rounded-xl font-semibold
+           border border-gray-400 hover:border-amber-400 transition">
+          Перейти к каталогу
+        </a>
+      </div>
+    </div>
+  </section>
+
+<!-- Категории -->
+<section id="categories" class="relative h-screen text-white overflow-hidden">
+  <!-- Фон -->
+  <div class="absolute inset-0">
+    <img src="./assets/catalog_bg.png" alt="catalog background" class="w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-black/40"></div>
+  </div>
+
+  <!-- Контент -->
+  <div class="relative z-10 flex flex-col justify-center items-center h-full text-center px-8">
+    <h2 class="text-4xl font-bold mb-6">Категории светильников</h2>
+    <p class="max-w-2xl text-gray-200 mb-10">
+      Ознакомьтесь с основными типами светильников, представленными в каталоге. Каждый вариант оптимизирован под конкретные помещения и задачи освещения.
+    </p>
+
+    <!-- Контейнер для динамически подставляемых категорий -->
+    <div id="categoryContainer" class="flex flex-wrap justify-center gap-10"></div>
+  </div>
+</section>
+
+<!-- Подкатегории -->
+<section id="subcategories" class="py-10 bg-[#2c2c2c] text-white">
+  <div class="container mx-auto px-8 text-center">
+    <div id="subcategoryContainer" class="flex flex-wrap justify-center gap-4"></div>
+  </div>
+</section>
+
+<!-- Светильники -->
+<section id="fixtures" class="py-10 bg-[#222222] text-white">
+  <div class="container mx-auto px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="fixtureContainer"></div>
+</section>
+
+<!-- ======================= AI-советник ======================= -->
+<section id="advisor" class="relative flex flex-col justify-center items-center text-white min-h-screen overflow-hidden pt-16 md:pt-20 lg:pt-24">
+
+  <!-- Фон -->
+  <div class="absolute inset-0">
+    <img src="./assets/adviser_bg.png" alt="advisor background" class="w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-black/50"></div>
+  </div>
+
+  <!-- Контейнер для центрирования -->
+  <div class="relative z-10 flex flex-col flex-grow justify-center items-center w-full">
+  <!-- Окно чата -->
+      <div id="chatPanel" class="bg-[#23282b]/20 backdrop-blur-lg rounded-2xl shadow-2xl p-6 w-full max-w-3xl mx-auto mt-4">
+    <!-- Заголовок -->
+    <div class="flex items-center justify-center gap-4 mb-4">
+      <img src="./assets/advisor-icon.png" alt="Advisor Icon" class="w-20 h-20 opacity-90">
+      <h2 class="text-3xl font-bold">AI-советник</h2>
+    </div>
+
+    <!-- Кнопка очистки -->
+    <div class="text-right mb-3">
+      <button id="clearChatBtn" class="bg-gray-700 hover:bg-gray-600 text-white py-1 px-3 rounded-md text-sm transition">
+        Очистить
+      </button>
+    </div>
+
+    <!-- Контейнер сообщений -->
+    <div id="chatMessages" class="h-[360px] overflow-y-auto space-y-4 p-4 bg-[#1e2124]/80 rounded-lg shadow-inner">
+      <div class="bot-msg bg-[#2c2f33]/90 p-4 rounded-lg leading-relaxed">
+        <p>Здравствуйте! Я помогу подобрать освещение исходя из типа помещения, высоты потолка и доступного бюджета.</p>
+        <p class="mt-2 text-amber-400 font-medium">Примеры запросов:</p>
+        <p class="text-sm mt-1">
+          «Офис 45 м², высота 3.2 м, бюджет 20000»<br>
+          «Хочу осветить кухню 25 квадратных метров с потолком 2.8 метра и бюджетом 15000»<br>
+          «Нужно освещение для торгового зала, площадь 100 м², высота 4 метра, бюджет 50000»
+        </p>
+      </div>
+    </div>
+
+    <!-- Поле ввода -->
+    <form id="chatForm" class="flex gap-3 mt-4">
+      <input id="chatInput" type="text" placeholder="Опишите помещение и бюджет…" 
+             class="flex-1 rounded-md p-3 text-black focus:outline-none focus:ring-2 focus:ring-amber-400" />
+      <button type="submit" class="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-5 rounded-md transition">
+        Отправить
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ======================= Футер ======================= -->
+<footer class="bg-[#2c2c2c] text-white text-center py-4 mt-8 w-full relative z-10">
+  <p class="text-sm">© 2025 – Умный каталог световых решений</p>
+</footer>
+
+<script src="./assets/fixturesData.js"></script>
+<script src="./assets/script.js" defer></script>
+</body>
+</html>
