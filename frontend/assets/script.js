@@ -167,7 +167,7 @@ document.getElementById('chatForm')?.addEventListener('submit', async (e) => {
 
   // 2) POST /chat
   try {
-    const res = await fetch('http://127.0.0.1:8000/chat/', {
+    const res = await fetch('https://smart-lighting.onrender.com/chat/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: text }) // ✅ теперь передаём JSON
