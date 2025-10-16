@@ -63,8 +63,10 @@ Smart_Lighting_Catalog/
 │  └── train_models.py  
 │  
 ├── data/  
-│  ├── fixtures.csv  
-│  └── rooms.csv  
+│  ├── fixtures.csv
+│  ├── rooms.csv 
+│  ├── train_test_ready.npz
+│  └── training_dataset.csv — данные, на которых обучалась CatBoost
 │  
 ├── Dockerfile  
 ├── docker-compose.yml  
