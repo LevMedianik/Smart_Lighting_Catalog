@@ -36,7 +36,7 @@ Smart AI Lighting Catalog — это веб-приложение, объедин
 ---
 
 ## 🧩 Архитектура проекта
-
+```
 Smart_Lighting_Catalog/  
 ├── app/  
 │  ├── main.py — основное FastAPI-приложение  
@@ -66,13 +66,13 @@ Smart_Lighting_Catalog/
 │  ├── fixtures.csv
 │  ├── rooms.csv 
 │  ├── train_test_ready.npz
-│  └── training_dataset.csv
+│  └── training_dataset.csv (Данные для обучения модели)
 │  
 ├── Dockerfile  
 ├── docker-compose.yml  
 ├── requirements.txt  
 └── README.md  
-
+```
 ---
 
 ## 🚀 Развёртывание проекта
