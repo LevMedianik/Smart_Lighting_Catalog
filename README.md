@@ -165,9 +165,10 @@ The project is production-ready and extensible, supporting future enhancements s
 
 © 2025 — Smart Lighting Solutions Catalog  
 
-## Note  
+## Notes  
 
 The AI advisor currently supports a generalized set of room types including: office, kitchen, living room, bedroom, retail space, workshop, restaurant, café, warehouse, classroom, corridor, lobby, restroom, bathroom, hallway, laboratory, and store.  
+The project language is Russian only; English localization will be implemented in the future.
 
 ---
 
@@ -357,6 +358,7 @@ Smart AI Lighting Catalog демонстрирует комплексную ин
 
 © 2025 — Умный каталог световых решений
 
-## Примечание
+## Примечания
 
-AI-советник работает пока с ограниченным и обобщенным набором помещений: офис, кухня, гостиная, спальня, торговый зал, цех, ресторан, кафе, склад, аудитория, коридор, вестибюль, санузел, ванная, прихожая, лаборатория, магазин и с чисто синтетическим набором данных.
+AI-советник работает пока с ограниченным и обобщенным набором помещений: офис, кухня, гостиная, спальня, торговый зал, цех, ресторан, кафе, склад, аудитория, коридор, вестибюль, санузел, ванная, прихожая, лаборатория, магазин и с чисто синтетическим набором данных.  
+Язык проекта только русский, английская локализация будет внедрена в будущем.
